@@ -11,15 +11,16 @@ setTimeout(() => {
 }, 1000);
 }
 
-function createMovies(movie){
+function createMovies(movie, callback){
 setTimeout(() => {
     movies.push(movie)
+    callback();
 }, 2000);
 }
 
 getMovies();
 
 
-createMovies({ title: `Return of the Jedi`, body:`Luke Skywalker attempts to bring his father back to the light side of the Force. At the same time, the rebels hatch a plan to destroy the second Death Star.` });
+createMovies({ title: `Return of the Jedi`, body:`Luke Skywalker attempts to bring his father back to the light side of the Force. At the same time, the rebels hatch a plan to destroy the second Death Star.` }, getMovies);
 
 // new movie is not displayed because createMovies takes longer to execute than getMovies
